@@ -14,3 +14,9 @@ That's exactly the problem upgradeable contracts want to solve.
 ![](https://i.stack.imgur.com/5VEOd.png)
 
 
+# How to use this project
+
+- Alice deploys the `FundMe.sol` smart contract
+- Alice then deploys the ProxyContract.sol contract
+- Alice calls the address of the `ProxyContract` contract with the `setProxy` function in the `FundMe.sol` contract
+- When Alice no longer wants to use the ProxyContract contract, she deploys a new contract with ProxyContract.sol and can change the referrer address in the main contract with setProxy
