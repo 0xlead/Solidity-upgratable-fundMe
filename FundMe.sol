@@ -8,7 +8,7 @@ error FundMe__NotAuthorized();
 /// @notice This smart contract acts as a carrier
 contract FundMe {
     
-    event OwnerLog(address indexed oldAdmin, address newAdmin);
+    event OwnerChanged(address indexed oldAdmin, address newAdmin);
     event ContractChanded(address oldContract, address newContract);
     address private owner;
     address upgratableContract;
@@ -17,7 +17,7 @@ contract FundMe {
 
     constructor(){
         owner = msg.sender;
-        emit OwnerLog(msg.sender,);
+        emit OwnerChanged(msg.sender,);
     }
 
     // modifiers
@@ -52,7 +52,7 @@ contract FundMe {
     /// @param _newOwner Address of the new owner of the contract
     function changeOwner(address _newOwner) public onlyOwner {
         owner = _newOwner;
-        emit OwnerLog(owner, _newOwner);
+        emit OwnerChanged(owner, _newOwner);
     }
 
 
